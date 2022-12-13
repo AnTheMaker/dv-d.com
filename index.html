@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DV-D | Standby | Digital Video Disc Player</title>
+  <title>DV-D | Standby | Digital Video Disc Player - Bouncing DVD Logo Screensaver</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Miss the feeling of powering on a DVD Player and watching the Screensaver for hours? DV-D.com comes to the rescue!">
   <meta name="theme-color" content="#000000">
@@ -52,7 +52,7 @@ body::before{
 }
 .logo{
   animation-name: move-x, move-y, flicker;
-  animation-duration: 6.243s, 2.8s, 0.01s;
+  animation-duration: 6.243s, 2.8s, 0.8s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: linear;
@@ -102,14 +102,10 @@ function changeColor(e){
     path.setAttribute("fill", getNewColor(old_color));
   }
 }
-// recursive function to get a new random color which is different from the current/old color
 function getNewColor(old_color){
   var colors = ['aquamarine', 'aqua', 'chartreuse', 'cyan', 'deeppink', 'lawngreen', 'orangered', 'yellow', 'blue', 'white', 'blueviolet'];
-  var color = colors[Math.floor(Math.random()*colors.length)];
-  if(color == old_color){
-    color = getNewColor(old_color);
-  }
-  return color;
+  colors = colors.filter(function(e){ return e !== old_color }); // remove old color name from array
+  return colors[Math.floor(Math.random()*colors.length)];
 }
 </script>
 </body>
